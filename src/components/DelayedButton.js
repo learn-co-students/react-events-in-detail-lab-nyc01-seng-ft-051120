@@ -1,16 +1,16 @@
 import React from 'react'
 class DelayedButton extends React.Component{
     delay=(event)=>{
-        let e=event
+        event.persist()
         setInterval( ()=>{
 
-        
+            this.props.onDelayedClick(event)
+       
            
         },this.props.delay
 
         )
-        this.props.onDelayedClick(e)
-    }
+         }
     render(){
        
         return(
